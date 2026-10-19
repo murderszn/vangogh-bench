@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>vangogh: a benchmark where AI models paint</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="vangogh scores AI models on how well they paint: where they place shapes, how their strokes move, and how true their color is.">
+<meta name="theme-color" content="#0e1630">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   VANGOGH: design tokens. Change these first; everything below reads them.
+   Palette is taken from the painting the benchmark is named for:
+   night sky, cobalt swirl, chrome-yellow moon, cypress green.
+   ========================================================================== */
+:root {
+  --night: #0e1630;
+  --cobalt: #2447a8;
+  --cerulean: #6aa7d8;
+  --chrome: #f2b82e;
+  --cypress: #1d3b34;
+  --linen: #f3ead3;
+  --linen-dim: #b9b3a2;
+  --rule: rgba(243, 234, 211, 0.18);
+
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body: 'Hanken Grotesk', -apple-system, 'Segoe UI', sans-serif;
+
+  --gutter: clamp(20px, 5vw, 72px);
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* { box-sizing: border-box; }
+html { background: var(--night); }
+body {
+  margin: 0;
+  background: var(--night);
+  color: var(--linen);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--chrome); outline-offset: 4px; }
+::selection { background: var(--chrome); color: var(--night); }
+
+/* ---- Header --------------------------------------------------------- */
+.site-header {
+  position: absolute;
+  inset: 0 0 auto 0;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: calc(env(safe-area-inset-top, 0px) + 22px) var(--gutter) 0;
+}
+.wordmark {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 400;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+.site-nav { display: flex; gap: clamp(16px, 3vw, 36px); }
+.site-nav a {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--linen-dim);
+  text-decoration: none;
+  transition: color 0.2s var(--ease);
+}
+.site-nav a:hover { color: var(--linen); }
+
+/* ---- Hero ----------------------------------------------------------- */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  isolation: isolate;
+}
+#canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  display: block;
+}
+/* Keeps text readable over the painting. Lighten it to show more canvas. */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(14,22,48,0.92) 0%, rgba(14,22,48,0.6) 42%, rgba(14,22,48,0) 72%),
+    linear-gradient(0deg, rgba(14,22,48,0.7) 0%, rgba(14,22,48,0) 40%);
+}
+.hero-copy {
+  width: min(640px, 100%);
+  padding: 0 var(--gutter) clamp(48px, 9vh, 96px);
+}
+.hero h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-variation-settings: 'opsz' 144;
+  font-size: clamp(76px, 15vw, 188px);
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+}
+.hero .lede {
+  margin: 28px 0 0;
+  max-width: 34ch;
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(22px, 2.6vw, 30px);
+  line-height: 1.28;
+  color: var(--linen);
+}
+.hero .sub {
+  margin: 14px 0 0;
+  max-width: 46ch;
+  color: var(--linen-dim);
+}
+.actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
+.btn {
+  display: inline-block;
+  padding: 13px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  border: 1px solid var(--rule);
+  transition: background 0.2s var(--ease), color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+.btn:hover { border-color: var(--linen); }
+.btn.primary { background: var(--chrome); border-color: var(--chrome); color: var(--night); }
+.btn.primary:hover { background: var(--linen); border-color: var(--linen); }
+
+/* ---- Section: what gets scored (slot: swap or add sections here) ---- */
+.section { padding: clamp(64px, 10vw, 128px) var(--gutter); }
+.section h2 {
+  margin: 0 0 clamp(32px, 5vw, 56px);
+  max-width: 18ch;
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(34px, 5vw, 60px);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+.measures {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--rule);
+}
+.measure { padding: 26px 28px 8px 0; }
+.measure + .measure { padding-left: 28px; border-left: 1px solid var(--rule); }
+.measure h3 {
+  margin: 0 0 10px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 24px;
+  letter-spacing: -0.01em;
+}
+.measure p { margin: 0; color: var(--linen-dim); font-size: 16px; max-width: 30ch; }
+
+/* ---- Footer --------------------------------------------------------- */
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 28px var(--gutter) calc(env(safe-area-inset-bottom, 0px) + 32px);
+  border-top: 1px solid var(--rule);
+  color: var(--linen-dim);
+  font-size: 14px;
+}
+.site-footer nav { display: flex; gap: 24px; }
+.site-footer a { text-decoration: none; }
+.site-footer a:hover { color: var(--linen); }
+
+/* ---- Responsive ----------------------------------------------------- */
+@media (max-width: 860px) {
+  .measures { grid-template-columns: 1fr 1fr; }
+  .measure:nth-child(3) { padding-left: 0; border-left: 0; }
+  .measure:nth-child(n+3) { border-top: 1px solid var(--rule); margin-top: 24px; }
+  .hero::after {
+    background: linear-gradient(0deg, rgba(14,22,48,0.94) 0%, rgba(14,22,48,0.75) 50%, rgba(14,22,48,0.1) 100%);
+  }
+}
+@media (max-width: 520px) {
+  .measures { grid-template-columns: 1fr; }
+  .measure, .measure + .measure { padding: 22px 0 6px; border-left: 0; }
+  .measure + .measure { border-top: 1px solid var(--rule); margin-top: 18px; }
+  .site-nav a:not(:last-child) { display: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="wordmark" href="/">vangogh</a>
+  <nav class="site-nav" aria-label="Main">
+    <a href="#leaderboard">Leaderboard</a>
+    <a href="#method">Method</a>
+    <a href="#submit">Submit a model</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <canvas id="canvas" aria-hidden="true"></canvas>
+    <div class="hero-copy">
+      <h1>vangogh</h1>
+      <p class="lede">A benchmark where AI models paint.</p>
+      <p class="sub">Each model gets the same blank canvas and the same reference. We score where it puts shapes, how its strokes move, and how true its color is.</p>
+      <div class="actions">
+        <a class="btn primary" href="#leaderboard">See the leaderboard</a>
+        <a class="btn" href="#method">Read the method</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="method">
+    <h2>Four things get scored</h2>
+    <div class="measures">
+      <div class="measure">
+        <h3>Placement</h3>
+        <p>Whether shapes land where the reference puts them.</p>
+      </div>
+      <div class="measure">
+        <h3>Brushwork</h3>
+        <p>Whether strokes follow the direction and thickness of real impasto.</p>
+      </div>
+      <div class="measure">
+        <h3>Color</h3>
+        <p>How close each pigment is, measured in CIELAB, the way eyes see difference.</p>
+      </div>
+      <div class="measure">
+        <h3>Cost</h3>
+        <p>What one successful painting costs in tokens and dollars.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next sections to build: #leaderboard (table), #submit (how to run a model) -->
+</main>
+
+<footer class="site-footer">
+  <span>vangogh, a benchmark for model painting</span>
+  <nav aria-label="Footer">
+    <a href="#">GitHub</a>
+    <a href="#">Dataset</a>
+    <a href="#">Contact</a>
+  </nav>
+</footer>
+
+<script>
+/* The hero painting. Strokes follow a swirl field, and the same seed always
+   produces the same painting, so it works as a stand-in "reference".
+   Tune: STROKES (density), palette(), field() (the swirl centers). */
+(() => {
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+  const STROKES = 3400;
+  const PER_FRAME = 16;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let W, H, raf, drawn, rand, scale;
+
+  function mulberry32(a) {
+    return () => {
+      a |= 0; a = a + 0x6D2B79F5 | 0;
+      let t = Math.imul(a ^ a >>> 15, 1 | a);
+      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    };
+  }
+
+  // Swirl centers, as fractions of the canvas
+  const swirls = [{ x: 0.7, y: 0.36, r: 0.2 }, { x: 0.46, y: 0.52, r: 0.16 }];
+  const moon = { x: 0.88, y: 0.16 };
+
+  function field(nx, ny) {
+    let vx = Math.cos(ny * 8 + nx * 3) * 0.55;
+    let vy = Math.sin(nx * 9 - ny * 2) * 0.35;
+    for (const s of swirls) {
+      const dx = nx - s.x, dy = ny - s.y;
+      const d = Math.hypot(dx, dy);
+      const w = Math.exp(-(d / s.r) * (d / s.r) * 0.9) * 2.4;
+      const a = Math.atan2(dy, dx) + Math.PI / 2 + d * 3;
+      vx += Math.cos(a) * w;
+      vy += Math.sin(a) * w;
+    }
+    return Math.atan2(vy, vx);
+  }
+
+  function pick(arr) { return arr[Math.floor(rand() * arr.length)]; }
+
+  function color(nx, ny) {
+    const dm = Math.hypot((nx - moon.x) * (W / H), ny - moon.y);
+    let base;
+    if (dm < 0.11) base = pick([[44, 90, 62], [42, 92, 70], [48, 85, 80]]);
+    else if (dm < 0.2) base = pick([[40, 85, 55], [44, 80, 60], [215, 55, 55]]);
+    else if (ny > 0.8) base = pick([[165, 35, 20], [160, 30, 28], [220, 50, 18]]);
+    else {
+      let near = 9;
+      for (const s of swirls) near = Math.min(near, Math.hypot(nx - s.x, ny - s.y) / s.r);
+      base = near < 1.1
+        ? pick([[205, 60, 62], [215, 65, 52], [44, 88, 60], [222, 70, 40]])
+        : pick([[222, 66, 36], [226, 62, 28], [217, 60, 45], [228, 55, 20]]);
+    }
+    const j = (rand() - 0.5) * 10;
+    return [base[0] + (rand() - 0.5) * 6, base[1], Math.max(8, Math.min(88, base[2] + j))];
+  }
+
+  function paintStroke() {
+    const nx = rand(), ny = rand();
+    const [h, s, l] = color(nx, ny);
+    const w = (5 + rand() * 7) * scale;
+    const steps = 8 + Math.floor(rand() * 10);
+    let x = nx * W, y = ny * H;
+    const pts = [[x, y]];
+    for (let i = 0; i < steps; i++) {
+      const a = field(x / W, y / H);
+      x += Math.cos(a) * w * 1.05;
+      y += Math.sin(a) * w * 1.05;
+      pts.push([x, y]);
+    }
+    const a0 = field(nx, ny);
+    const ox = -Math.sin(a0) * w * 0.22, oy = Math.cos(a0) * w * 0.22;
+    const trace = (dx, dy) => {
+      ctx.beginPath();
+      ctx.moveTo(pts[0][0] + dx, pts[0][1] + dy);
+      for (let i = 1; i < pts.length; i++) ctx.lineTo(pts[i][0] + dx, pts[i][1] + dy);
+      ctx.stroke();
+    };
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    ctx.strokeStyle = `hsla(${h},${s}%,${l}%,0.92)`;
+    ctx.lineWidth = w;
+    trace(0, 0);
+    ctx.lineWidth = w * 0.28;      // bristle ridges
+    ctx.strokeStyle = `hsla(${h},${s}%,${Math.min(95, l + 14)}%,0.55)`;
+    trace(ox, oy);
+    ctx.strokeStyle = `hsla(${h},${s}%,${Math.max(4, l - 12)}%,0.5)`;
+    trace(-ox, -oy);
+  }
+
+  function frame() {
+    for (let i = 0; i < PER_FRAME && drawn < STROKES; i++, drawn++) paintStroke();
+    if (drawn < STROKES) raf = requestAnimationFrame(frame);
+  }
+
+  function start() {
+    cancelAnimationFrame(raf);
+    const dpr = Math.min(devicePixelRatio || 1, 1.5);
+    W = canvas.clientWidth * dpr;
+    H = canvas.clientHeight * dpr;
+    canvas.width = W;
+    canvas.height = H;
+    scale = Math.max(0.7, Math.min(W, H) / 800);
+    ctx.fillStyle = '#0e1630';
+    ctx.fillRect(0, 0, W, H);
+    rand = mulberry32(1889);       // the year of Starry Night
+    drawn = 0;
+    if (reduce) { while (drawn < STROKES) { paintStroke(); drawn++; } }
+    else frame();
+  }
+
+  let t;
+  addEventListener('resize', () => {
+    clearTimeout(t);
+    t = setTimeout(() => { reduce ? start() : (() => { drawn = 0; start(); })(); }, 200);
+  });
+  start();
+})();
+</script>
+</body>
+</html>

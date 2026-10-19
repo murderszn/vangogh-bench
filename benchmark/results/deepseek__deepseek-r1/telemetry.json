@@ -1,0 +1,13 @@
+{
+  "generation_id": "gen-mock-7fde0594c217",
+  "model": "deepseek/deepseek-r1",
+  "latency_ms": 28500.0,
+  "ttft_ms": 1240.0,
+  "prompt_tokens": 1280,
+  "completion_tokens": 7120,
+  "total_tokens": 8400,
+  "reasoning_tokens": 4920,
+  "cost_usd": 0.0078,
+  "provider": "MockFrontierEngine",
+  "is_mock": true
+}

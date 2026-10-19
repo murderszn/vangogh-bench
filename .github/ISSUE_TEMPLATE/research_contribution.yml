@@ -1,0 +1,27 @@
+name: "Research & Metric Proposal"
+description: "Submit research papers, propose new benchmark metrics, or disclose anti-cheat edge cases."
+title: "[Research]: <topic>"
+labels: ["research", "methodology"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🔬 VanGoghBench Research & Metric Contributions
+        VanGoghBench welcomes academic, algorithmic, and integrity contributions from the AI community.
+  - type: input
+    id: paper_title
+    attributes:
+      label: Paper / Article / Project Title
+      placeholder: "e.g. Evaluating Fluid Dynamics and Turbulence Alignment in Generative Vision Models"
+  - type: input
+    id: author_affil
+    attributes:
+      label: Author(s) & Affiliation
+      placeholder: "e.g. Jane Doe (University / Lab)"
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Summary of Proposal or Discovery
+      description: "Explain your proposed metric, ground-truth refinement, or anti-cheat finding."
+    validations:
+      required: true

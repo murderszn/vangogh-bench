@@ -1,0 +1,1502 @@
+{
+  "metadata": {
+    "file_name": "assets/starry-night-reference.jpg",
+    "mime_type": "image/jpeg",
+    "file_size_bytes": 332001,
+    "md5": "d0799a9b9e1b3617565671df9891f460",
+    "sha256": "718f795497586bf8174d3596ec2419ead1cb691870a30ab26946e227d2aee868",
+    "dimensions": {
+      "width": 960,
+      "height": 760,
+      "aspect_ratio": "960/760",
+      "aspect_ratio_decimal": 1.263158,
+      "channels": 3,
+      "total_pixels": 729600
+    },
+    "canvas_mapping": {
+      "scale_factor_SC": 2,
+      "full_canvas_width": 1920,
+      "full_canvas_height": 1520,
+      "frame_canvas_width": 3840,
+      "frame_canvas_height": 2700,
+      "canvas_origin_x": 960,
+      "canvas_origin_y": 590
+    }
+  },
+  "regions": {
+    "entire_painting": {
+      "name": "entire_painting",
+      "pixel_bounds": {
+        "ymin": 0,
+        "ymax": 760,
+        "xmin": 0,
+        "xmax": 960
+      },
+      "normalized_bounds": {
+        "ymin": 0.0,
+        "ymax": 1.0,
+        "xmin": 0.0,
+        "xmax": 1.0
+      },
+      "pixel_count": 729600,
+      "canvas_percent": 100.0,
+      "rgb": {
+        "r": {
+          "mean": 76.4,
+          "std": 46.91,
+          "median": 67.0,
+          "min": 0.0,
+          "max": 255.0
+        },
+        "g": {
+          "mean": 92.42,
+          "std": 49.13,
+          "median": 90.0,
+          "min": 0.0,
+          "max": 255.0
+        },
+        "b": {
+          "mean": 110.49,
+          "std": 51.16,
+          "median": 123.0,
+          "min": 0.0,
+          "max": 255.0
+        }
+      },
+      "luminance_bt601": {
+        "mean": 89.69,
+        "std": 47.08,
+        "median": 87.19,
+        "min": 0.0,
+        "max": 247.68
+      },
+      "luminance_painter": {
+        "mean": 89.6,
+        "std": 43.74,
+        "median": 87.94,
+        "min": 8.14,
+        "max": 211.12
+      },
+      "structure_tensor": {
+        "gradient_magnitude": {
+          "mean": 15.99,
+          "std": 12.76,
+          "median": 12.54,
+          "p90": 33.34,
+          "max": 130.13
+        },
+        "coherence_anisotropy": {
+          "mean": 0.5934,
+          "std": 0.1886,
+          "median": 0.6208
+        },
+        "orientation": {
+          "axial_mean_angle_deg": 168.0,
+          "resultant_vector_R": 0.1822,
+          "circular_dispersion": 0.8178,
+          "orientation_histogram_8bins_pct": [
+            14.47,
+            11.27,
+            9.7,
+            10.69,
+            7.98,
+            9.82,
+            18.41,
+            17.65
+          ]
+        }
+      },
+      "dominant_sub_palette": [
+        {
+          "hex": "#465d84",
+          "rgb": [
+            70,
+            93,
+            132
+          ],
+          "percentage": 39.76,
+          "luminance": 90.2
+        },
+        {
+          "hex": "#202731",
+          "rgb": [
+            32,
+            39,
+            49
+          ],
+          "percentage": 32.81,
+          "luminance": 38.4
+        },
+        {
+          "hex": "#8b9c98",
+          "rgb": [
+            139,
+            156,
+            152
+          ],
+          "percentage": 27.42,
+          "luminance": 150.4
+        }
+      ]
+    },
+    "cypress_tree_region": {
+      "name": "cypress_tree_region",
+      "pixel_bounds": {
+        "ymin": 120,
+        "ymax": 760,
+        "xmin": 0,
+        "xmax": 240
+      },
+      "normalized_bounds": {
+        "ymin": 0.1579,
+        "ymax": 1.0,
+        "xmin": 0.0,
+        "xmax": 0.25
+      },
+      "pixel_count": 153600,
+      "canvas_percent": 21.05,
+      "rgb": {
+        "r": {
+          "mean": 66.1,
+          "std": 42.51,
+          "median": 55.0,
+          "min": 0.0,
+          "max": 229.0
+        },
+        "g": {
+          "mean": 79.88,
+          "std": 46.46,
+          "median": 70.0,
+          "min": 0.0,
+          "max": 233.0
+        },
+        "b": {
+          "mean": 91.76,
+          "std": 55.55,
+          "median": 89.0,
+          "min": 0.0,
+          "max": 255.0
+        }
+      },
+      "luminance_bt601": {
+        "mean": 77.11,
+        "std": 44.98,
+        "median": 68.83,
+        "min": 0.0,
+        "max": 227.89
+      },
+      "luminance_painter": {
+        "mean": 77.05,
+        "std": 42.18,
+        "median": 68.54,
+        "min": 8.14,
+        "max": 211.12
+      },
+      "structure_tensor": {
+        "gradient_magnitude": {
+          "mean": 13.51,
+          "std": 11.32,
+          "median": 10.28,
+          "p90": 28.42,
+          "max": 118.03
+        },
+        "coherence_anisotropy": {
+          "mean": 0.5822,
+          "std": 0.1804,
+          "median": 0.6055
+        },
+        "orientation": {
+          "axial_mean_angle_deg": 48.12,
+          "resultant_vector_R": 0.2589,
+          "circular_dispersion": 0.7411,
+          "orientation_histogram_8bins_pct": [
+            16.66,
+            18.56,
+            11.69,
+            21.52,
+            12.14,
+            4.12,
+            3.99,
+            11.31
+          ]
+        }
+      },
+      "dominant_sub_palette": [
+        {
+          "hex": "#212727",
+          "rgb": [
+            33,
+            39,
+            39
+          ],
+          "percentage": 46.11,
+          "luminance": 37.5
+        },
+        {
+          "hex": "#42587d",
+          "rgb": [
+            66,
+            88,
+            125
+          ],
+          "percentage": 29.14,
+          "luminance": 85.8
+        },
+        {
+          "hex": "#7f9297",
+          "rgb": [
+            127,
+            146,
+            151
+          ],
+          "percentage": 24.75,
+          "luminance": 140.7
+        }
+      ]
+    },
+    "cypress_tree_core": {
+      "name": "cypress_tree_core",
+      "pixel_bounds": {
+        "ymin": 200,
+        "ymax": 700,
+        "xmin": 30,
+        "xmax": 200
+      },
+      "normalized_bounds": {
+        "ymin": 0.2632,
+        "ymax": 0.9211,
+        "xmin": 0.0312,
+        "xmax": 0.2083
+      },
+      "pixel_count": 85000,
+      "canvas_percent": 11.65,
+      "rgb": {
+        "r": {
+          "mean": 67.63,
+          "std": 41.76,
+          "median": 59.0,
+          "min": 0.0,
+          "max": 229.0
+        },
+        "g": {
+          "mean": 83.55,
+          "std": 48.09,
+          "median": 76.0,
+          "min": 0.0,
+          "max": 233.0
+        },
+        "b": {
+          "mean": 96.97,
+          "std": 57.0,
+          "median": 103.0,
+          "min": 0.0,
+          "max": 255.0
+        }
+      },
+      "luminance_bt601": {
+        "mean": 80.32,
+        "std": 46.24,
+        "median": 73.85,
+        "min": 0.0,
+        "max": 227.89
+      },
+      "luminance_painter": {
+        "mean": 80.25,
+        "std": 43.65,
+        "median": 73.63,
+        "min": 11.61,
+        "max": 211.12
+      },
+      "structure_tensor": {
+        "gradient_magnitude": {
+          "mean": 13.24,
+          "std": 10.88,
+          "median": 10.1,
+          "p90": 27.9,
+          "max": 89.78
+        },
+        "coherence_anisotropy": {
+          "mean": 0.601,
+          "std": 0.1761,
+          "median": 0.6231
+        },
+        "orientation": {
+          "axial_mean_angle_deg": 37.86,
+          "resultant_vector_R": 0.2816,
+          "circular_dispersion": 0.7184,
+          "orientation_histogram_8bins_pct": [
+            19.43,
+            21.83,
+            8.45,
+            20.22,
+            10.28,
+            3.39,
+            3.12,
+            13.28
+          ]
+        }
+      },
+      "dominant_sub_palette": [
+        {
+          "hex": "#202627",
+          "rgb": [
+            32,
+            38,
+            39
+          ],
+          "percentage": 44.04,
+          "luminance": 36.6
+        },
+        {
+          "hex": "#445c7f",
+          "rgb": [
+            68,
+            92,
+            127
+          ],
+          "percentage": 28.11,
+          "luminance": 89.1
+        },
+        {
+          "hex": "#7b929e",
+          "rgb": [
+            123,
+            146,
+            158
+          ],
+          "percentage": 27.86,
+          "luminance": 140.6
+        }
+      ]
+    },
+    "moon_region": {
+      "name": "moon_region",
+      "pixel_bounds": {
+        "ymin": 20,
+        "ymax": 220,
+        "xmin": 740,
+        "xmax": 940
+      },
+      "normalized_bounds": {
+        "ymin": 0.0263,
+        "ymax": 0.2895,
+        "xmin": 0.7708,
+        "xmax": 0.9792
+      },
+      "pixel_count": 40000,
+      "canvas_percent": 5.48,
+      "rgb": {
+        "r": {
+          "mean": 142.72,
+          "std": 49.17,
+          "median": 157.0,
+          "min": 0.0,
+          "max": 255.0
+        },
+        "g": {
+          "mean": 154.35,
+          "std": 41.15,
+          "median": 165.0,
+          "min": 9.0,
+          "max": 255.0
+        },
+        "b": {
+          "mean": 126.82,
+          "std": 41.34,
+          "median": 133.0,
+          "min": 0.0,
+          "max": 246.0
+        }
+      },
+      "luminance_bt601": {
+        "mean": 147.73,
+        "std": 38.59,
+        "median": 157.14,
+        "min": 5.28,
+        "max": 247.68
+      },
+      "luminance_painter": {
+        "mean": 147.84,
+        "std": 33.82,
+        "median": 157.71,
+        "min": 39.68,
+        "max": 205.23
+      },
+      "structure_tensor": {
+        "gradient_magnitude": {
+          "mean": 15.21,
+          "std": 11.91,
+          "median": 12.02,
+          "p90": 31.4,
+          "max": 99.36
+        },
+        "coherence_anisotropy": {
+          "mean": 0.6615,
+          "std": 0.1401,
+          "median": 0.6827
+        },
+        "orientation": {
+          "axial_mean_angle_deg": 91.4,
+          "resultant_vector_R": 0.0414,
+          "circular_dispersion": 0.9586,
+          "orientation_histogram_8bins_pct": [
+            7.93,
+            13.28,
+            17.85,
+            10.06,
+            9.54,
+            16.16,
+            14.76,
+            10.42
+          ]
+        }
+      },
+      "dominant_sub_palette": [
+        {
+          "hex": "#acb88c",
+          "rgb": [
+            172,
+            184,
+            140
+          ],
+          "percentage": 52.21,
+          "luminance": 175.3
+        },
+        {
+          "hex": "#516a8c",
+          "rgb": [
+            81,
+            106,
+            140
+          ],
+          "percentage": 32.95,
+          "luminance": 102.3
+        },
+        {
+          "hex": "#b19f33",
+          "rgb": [
+            177,
+            159,
+            51
+          ],
+          "percentage": 14.84,
+          "luminance": 151.7
+        }
+      ]
+    },
+    "moon_core": {
+      "name": "moon_core",
+      "pixel_bounds": {
+        "ymin": 40,
+        "ymax": 140,
+        "xmin": 860,
+        "xmax": 940
+      },
+      "normalized_bounds": {
+        "ymin": 0.0526,
+        "ymax": 0.1842,
+        "xmin": 0.8958,
+        "xmax": 0.9792
+      },
+      "pixel_count": 8000,
+      "canvas_percent": 1.1,
+      "rgb": {
+        "r": {
+          "mean": 165.37,
+          "std": 35.84,
+          "median": 174.0,
+          "min": 0.0,
+          "max": 255.0
+        },
+        "g": {
+          "mean": 172.47,
+          "std": 31.3,
+          "median": 180.0,
+          "min": 9.0,
+          "max": 255.0
+        },
+        "b": {
+          "mean": 127.13,
+          "std": 33.62,
+          "median": 129.0,
+          "min": 0.0,
+          "max": 237.0
+        }
+      },
+      "luminance_bt601": {
+        "mean": 165.18,
+        "std": 30.39,
+        "median": 172.09,
+        "min": 5.28,
+        "max": 247.68
+      },
+      "luminance_painter": {
+        "mean": 165.31,
+        "std": 21.77,
+        "median": 169.91,
+        "min": 65.27,
+        "max": 205.23
+      },
+      "structure_tensor": {
+        "gradient_magnitude": {
+          "mean": 15.82,
+          "std": 12.87,
+          "median": 12.27,
+          "p90": 33.13,
+          "max": 99.36
+        },
+        "coherence_anisotropy": {
+          "mean": 0.6424,
+          "std": 0.142,
+          "median": 0.6629
+        },
+        "orientation": {
+          "axial_mean_angle_deg": 39.55,
+          "resultant_vector_R": 0.3731,
+          "circular_dispersion": 0.6269,
+          "orientation_histogram_8bins_pct": [
+            13.53,
+            27.29,
+            18.9,
+            10.86,
+            8.95,
+            4.59,
+            4.59,
+            11.3
+          ]
+        }
+      },
+      "dominant_sub_palette": [
+        {
+          "hex": "#b8c08f",
+          "rgb": [
+            184,
+            192,
+            143
+          ],
+          "percentage": 58.55,
+          "luminance": 183.9
+        },
+        {
+          "hex": "#a1a263",
+          "rgb": [
+            161,
+            162,
+            99
+          ],
+          "percentage": 27.06,
+          "luminance": 154.6
+        },
+        {
+          "hex": "#607272",
+          "rgb": [
+            96,
+            114,
+            114
+          ],
+          "percentage": 14.39,
+          "luminance": 108.9
+        }
+      ]
+    },
+    "sky_swirl_region": {
+      "name": "sky_swirl_region",
+      "pixel_bounds": {
+        "ymin": 40,
+        "ymax": 420,
+        "xmin": 240,
+        "xmax": 720
+      },
+      "normalized_bounds": {
+        "ymin": 0.0526,
+        "ymax": 0.5526,
+        "xmin": 0.25,
+        "xmax": 0.75
+      },
+      "pixel_count": 182400,
+      "canvas_percent": 25.0,
+      "rgb": {
+        "r": {
+          "mean": 84.92,
+          "std": 39.25,
+          "median": 81.0,
+          "min": 0.0,
+          "max": 249.0
+        },
+        "g": {
+          "mean": 106.78,
+          "std": 38.59,
+          "median": 108.0,
+          "min": 0.0,
+          "max": 244.0
+        },
+        "b": {
+          "mean": 140.32,
+          "std": 30.98,
+          "median": 143.0,
+          "min": 0.0,
+          "max": 251.0
+        }
+      },
+      "luminance_bt601": {
+        "mean": 104.07,
+        "std": 36.65,
+        "median": 104.08,
+        "min": 0.46,
+        "max": 240.71
+      },
+      "luminance_painter": {
+        "mean": 103.92,
+        "std": 32.1,
+        "median": 104.35,
+        "min": 13.48,
+        "max": 208.54
+      },
+      "structure_tensor": {
+        "gradient_magnitude": {
+          "mean": 17.13,
+          "std": 12.29,
+          "median": 14.14,
+          "p90": 34.29,
+          "max": 106.03
+        },
+        "coherence_anisotropy": {
+          "mean": 0.6247,
+          "std": 0.1736,
+          "median": 0.6529
+        },
+        "orientation": {
+          "axial_mean_angle_deg": 176.52,
+          "resultant_vector_R": 0.2013,
+          "circular_dispersion": 0.7987,
+          "orientation_histogram_8bins_pct": [
+            16.14,
+            12.89,
+            12.72,
+            7.88,
+            6.55,
+            8.29,
+            20.68,
+            14.85
+          ]
+        }
+      },
+      "dominant_sub_palette": [
+        {
+          "hex": "#526c92",
+          "rgb": [
+            82,
+            108,
+            146
+          ],
+          "percentage": 45.62,
+          "luminance": 104.6
+        },
+        {
+          "hex": "#293b6d",
+          "rgb": [
+            41,
+            59,
+            109
+          ],
+          "percentage": 27.91,
+          "luminance": 59.5
+        },
+        {
+          "hex": "#889ba4",
+          "rgb": [
+            136,
+            155,
+            164
+          ],
+          "percentage": 26.47,
+          "luminance": 150.1
+        }
+      ]
+    },
+    "sky_swirl_core": {
+      "name": "sky_swirl_core",
+      "pixel_bounds": {
+        "ymin": 80,
+        "ymax": 360,
+        "xmin": 320,
+        "xmax": 680
+      },
+      "normalized_bounds": {
+        "ymin": 0.1053,
+        "ymax": 0.4737,
+        "xmin": 0.3333,
+        "xmax": 0.7083
+      },
+      "pixel_count": 100800,
+      "canvas_percent": 13.82,
+      "rgb": {
+        "r": {
+          "mean": 84.47,
+          "std": 35.83,
+          "median": 82.0,
+          "min": 0.0,
+          "max": 249.0
+        },
+        "g": {
+          "mean": 106.84,
+          "std": 35.78,
+          "median": 108.0,
+          "min": 1.0,
+          "max": 244.0
+        },
+        "b": {
+          "mean": 141.73,
+          "std": 29.58,
+          "median": 144.0,
+          "min": 1.0,
+          "max": 251.0
+        }
+      },
+      "luminance_bt601": {
+        "mean": 104.13,
+        "std": 34.12,
+        "median": 104.87,
+        "min": 1.38,
+        "max": 240.71
+      },
+      "luminance_painter": {
+        "mean": 103.97,
+        "std": 29.25,
+        "median": 105.05,
+        "min": 15.48,
+        "max": 203.71
+      },
+      "structure_tensor": {
+        "gradient_magnitude": {
+          "mean": 17.13,
+          "std": 12.37,
+          "median": 14.07,
+          "p90": 34.49,
+          "max": 97.7
+        },
+        "coherence_anisotropy": {
+          "mean": 0.654,
+          "std": 0.1612,
+          "median": 0.681
+        },
+        "orientation": {
+          "axial_mean_angle_deg": 21.0,
+          "resultant_vector_R": 0.2261,
+          "circular_dispersion": 0.7739,
+          "orientation_histogram_8bins_pct": [
+            16.81,
+            15.76,
+            17.08,
+            10.02,
+            6.36,
+            5.56,
+            14.06,
+            14.34
+          ]
+        }
+      },
+      "dominant_sub_palette": [
+        {
+          "hex": "#516b91",
+          "rgb": [
+            81,
+            107,
+            145
+          ],
+          "percentage": 45.96,
+          "luminance": 103.5
+        },
+        {
+          "hex": "#8195a7",
+          "rgb": [
+            129,
+            149,
+            167
+          ],
+          "percentage": 28.06,
+          "luminance": 145.4
+        },
+        {
+          "hex": "#2a3d6d",
+          "rgb": [
+            42,
+            61,
+            109
+          ],
+          "percentage": 25.98,
+          "luminance": 60.7
+        }
+      ]
+    },
+    "hills_and_village_region": {
+      "name": "hills_and_village_region",
+      "pixel_bounds": {
+        "ymin": 440,
+        "ymax": 760,
+        "xmin": 220,
+        "xmax": 960
+      },
+      "normalized_bounds": {
+        "ymin": 0.5789,
+        "ymax": 1.0,
+        "xmin": 0.2292,
+        "xmax": 1.0
+      },
+      "pixel_count": 236800,
+      "canvas_percent": 32.46,
+      "rgb": {
+        "r": {
+          "mean": 56.6,
+          "std": 37.67,
+          "median": 46.0,
+          "min": 0.0,
+          "max": 235.0
+        },
+        "g": {
+          "mean": 68.46,
+          "std": 42.62,
+          "median": 58.0,
+          "min": 0.0,
+          "max": 237.0
+        },
+        "b": {
+          "mean": 82.01,
+          "std": 48.48,
+          "median": 75.0,
+          "min": 0.0,
+          "max": 255.0
+        }
+      },
+      "luminance_bt601": {
+        "mean": 66.46,
+        "std": 40.92,
+        "median": 57.15,
+        "min": 0.0,
+        "max": 233.97
+      },
+      "luminance_painter": {
+        "mean": 66.4,
+        "std": 36.83,
+        "median": 58.08,
+        "min": 8.49,
+        "max": 201.42
+      },
+      "structure_tensor": {
+        "gradient_magnitude": {
+          "mean": 16.61,
+          "std": 13.74,
+          "median": 12.71,
+          "p90": 35.49,
+          "max": 125.31
+        },
+        "coherence_anisotropy": {
+          "mean": 0.5673,
+          "std": 0.2073,
+          "median": 0.5914
+        },
+        "orientation": {
+          "axial_mean_angle_deg": 153.46,
+          "resultant_vector_R": 0.3464,
+          "circular_dispersion": 0.6536,
+          "orientation_histogram_8bins_pct": [
+            12.45,
+            4.08,
+            6.4,
+            9.71,
+            8.43,
+            12.15,
+            23.09,
+            23.7
+          ]
+        }
+      },
+      "dominant_sub_palette": [
+        {
+          "hex": "#1b2026",
+          "rgb": [
+            27,
+            32,
+            38
+          ],
+          "percentage": 45.05,
+          "luminance": 31.5
+        },
+        {
+          "hex": "#3a4a64",
+          "rgb": [
+            58,
+            74,
+            100
+          ],
+          "percentage": 32.91,
+          "luminance": 72.4
+        },
+        {
+          "hex": "#728692",
+          "rgb": [
+            114,
+            134,
+            146
+          ],
+          "percentage": 22.03,
+          "luminance": 129.2
+        }
+      ]
+    },
+    "village_core": {
+      "name": "village_core",
+      "pixel_bounds": {
+        "ymin": 520,
+        "ymax": 740,
+        "xmin": 260,
+        "xmax": 840
+      },
+      "normalized_bounds": {
+        "ymin": 0.6842,
+        "ymax": 0.9737,
+        "xmin": 0.2708,
+        "xmax": 0.875
+      },
+      "pixel_count": 127600,
+      "canvas_percent": 17.49,
+      "rgb": {
+        "r": {
+          "mean": 46.16,
+          "std": 29.25,
+          "median": 40.0,
+          "min": 0.0,
+          "max": 208.0
+        },
+        "g": {
+          "mean": 56.72,
+          "std": 33.54,
+          "median": 50.0,
+          "min": 0.0,
+          "max": 223.0
+        },
+        "b": {
+          "mean": 70.19,
+          "std": 42.56,
+          "median": 62.0,
+          "min": 0.0,
+          "max": 232.0
+        }
+      },
+      "luminance_bt601": {
+        "mean": 55.1,
+        "std": 32.33,
+        "median": 48.73,
+        "min": 0.0,
+        "max": 218.17
+      },
+      "luminance_painter": {
+        "mean": 55.03,
+        "std": 27.36,
+        "median": 50.11,
+        "min": 8.97,
+        "max": 183.22
+      },
+      "structure_tensor": {
+        "gradient_magnitude": {
+          "mean": 16.25,
+          "std": 13.27,
+          "median": 12.43,
+          "p90": 34.82,
+          "max": 100.96
+        },
+        "coherence_anisotropy": {
+          "mean": 0.5329,
+          "std": 0.214,
+          "median": 0.5489
+        },
+        "orientation": {
+          "axial_mean_angle_deg": 153.19,
+          "resultant_vector_R": 0.2116,
+          "circular_dispersion": 0.7884,
+          "orientation_histogram_8bins_pct": [
+            14.86,
+            4.74,
+            9.25,
+            11.97,
+            9.04,
+            13.19,
+            18.08,
+            18.88
+          ]
+        }
+      },
+      "dominant_sub_palette": [
+        {
+          "hex": "#191e22",
+          "rgb": [
+            25,
+            30,
+            34
+          ],
+          "percentage": 47.58,
+          "luminance": 29.1
+        },
+        {
+          "hex": "#334158",
+          "rgb": [
+            51,
+            65,
+            88
+          ],
+          "percentage": 35.62,
+          "luminance": 63.6
+        },
+        {
+          "hex": "#5f7286",
+          "rgb": [
+            95,
+            114,
+            134
+          ],
+          "percentage": 16.79,
+          "luminance": 110.6
+        }
+      ]
+    },
+    "alpilles_mountain_ridge": {
+      "name": "alpilles_mountain_ridge",
+      "pixel_bounds": {
+        "ymin": 420,
+        "ymax": 530,
+        "xmin": 220,
+        "xmax": 960
+      },
+      "normalized_bounds": {
+        "ymin": 0.5526,
+        "ymax": 0.6974,
+        "xmin": 0.2292,
+        "xmax": 1.0
+      },
+      "pixel_count": 81400,
+      "canvas_percent": 11.16,
+      "rgb": {
+        "r": {
+          "mean": 82.83,
+          "std": 45.33,
+          "median": 78.0,
+          "min": 0.0,
+          "max": 230.0
+        },
+        "g": {
+          "mean": 101.06,
+          "std": 48.78,
+          "median": 105.0,
+          "min": 0.0,
+          "max": 232.0
+        },
+        "b": {
+          "mean": 120.87,
+          "std": 44.68,
+          "median": 134.0,
+          "min": 0.0,
+          "max": 247.0
+        }
+      },
+      "luminance_bt601": {
+        "mean": 97.86,
+        "std": 46.27,
+        "median": 100.85,
+        "min": 0.23,
+        "max": 233.11
+      },
+      "luminance_painter": {
+        "mean": 97.76,
+        "std": 42.91,
+        "median": 100.52,
+        "min": 8.49,
+        "max": 205.0
+      },
+      "structure_tensor": {
+        "gradient_magnitude": {
+          "mean": 16.26,
+          "std": 13.2,
+          "median": 12.71,
+          "p90": 33.16,
+          "max": 125.31
+        },
+        "coherence_anisotropy": {
+          "mean": 0.657,
+          "std": 0.1701,
+          "median": 0.6789
+        },
+        "orientation": {
+          "axial_mean_angle_deg": 151.04,
+          "resultant_vector_R": 0.6676,
+          "circular_dispersion": 0.3324,
+          "orientation_histogram_8bins_pct": [
+            4.62,
+            2.21,
+            2.15,
+            3.46,
+            5.52,
+            11.79,
+            40.54,
+            29.7
+          ]
+        }
+      },
+      "dominant_sub_palette": [
+        {
+          "hex": "#4a6387",
+          "rgb": [
+            74,
+            99,
+            135
+          ],
+          "percentage": 40.08,
+          "luminance": 95.7
+        },
+        {
+          "hex": "#899c9c",
+          "rgb": [
+            137,
+            156,
+            156
+          ],
+          "percentage": 32.4,
+          "luminance": 150.4
+        },
+        {
+          "hex": "#20273b",
+          "rgb": [
+            32,
+            39,
+            59
+          ],
+          "percentage": 27.52,
+          "luminance": 39.1
+        }
+      ]
+    }
+  },
+  "dominant_palette_k8": [
+    {
+      "hex": "#171c1f",
+      "rgb": [
+        23.0,
+        27.7,
+        31.1
+      ],
+      "rgb_int": [
+        23,
+        28,
+        31
+      ],
+      "luminance": 26.7,
+      "percentage": 17.58,
+      "semantic_name": "Deep Cypress / Night Shadow"
+    },
+    {
+      "hex": "#5b7699",
+      "rgb": [
+        91.3,
+        118.4,
+        152.6
+      ],
+      "rgb_int": [
+        91,
+        118,
+        153
+      ],
+      "luminance": 114.2,
+      "percentage": 17.43,
+      "semantic_name": "Muted Cobalt / Swirl Blue"
+    },
+    {
+      "hex": "#425983",
+      "rgb": [
+        66.1,
+        89.2,
+        131.1
+      ],
+      "rgb_int": [
+        66,
+        89,
+        131
+      ],
+      "luminance": 87.1,
+      "percentage": 16.73,
+      "semantic_name": "Deep Ultramarine Blue"
+    },
+    {
+      "hex": "#31393f",
+      "rgb": [
+        48.7,
+        57.1,
+        63.2
+      ],
+      "rgb_int": [
+        49,
+        57,
+        63
+      ],
+      "luminance": 55.3,
+      "percentage": 12.4,
+      "semantic_name": "Dark Slate / Village Charcoal"
+    },
+    {
+      "hex": "#7f96a5",
+      "rgb": [
+        127.4,
+        149.6,
+        164.6
+      ],
+      "rgb_int": [
+        127,
+        150,
+        165
+      ],
+      "luminance": 144.6,
+      "percentage": 12.19,
+      "semantic_name": "Pale Azure / Sky Mist"
+    },
+    {
+      "hex": "#283a6d",
+      "rgb": [
+        40.1,
+        57.7,
+        109.4
+      ],
+      "rgb_int": [
+        40,
+        58,
+        109
+      ],
+      "luminance": 58.3,
+      "percentage": 11.87,
+      "semantic_name": "Midnight Navy / Deep Indigo"
+    },
+    {
+      "hex": "#aeb79c",
+      "rgb": [
+        173.7,
+        182.6,
+        155.9
+      ],
+      "rgb_int": [
+        174,
+        183,
+        156
+      ],
+      "luminance": 176.9,
+      "percentage": 7.79,
+      "semantic_name": "Star Glow / Citron Cream"
+    },
+    {
+      "hex": "#8b8c56",
+      "rgb": [
+        138.5,
+        139.7,
+        86.3
+      ],
+      "rgb_int": [
+        139,
+        140,
+        86
+      ],
+      "luminance": 133.3,
+      "percentage": 4.0,
+      "semantic_name": "Cypress Olive / Earth Ochre"
+    }
+  ],
+  "dominant_palette_k12": [
+    {
+      "hex": "#607b9b",
+      "rgb": [
+        96.4,
+        123.4,
+        155.0
+      ],
+      "rgb_int": [
+        96,
+        123,
+        155
+      ],
+      "luminance": 118.9,
+      "percentage": 14.85,
+      "semantic_name": "Muted Cobalt / Swirl Blue"
+    },
+    {
+      "hex": "#455f90",
+      "rgb": [
+        68.6,
+        95.5,
+        144.1
+      ],
+      "rgb_int": [
+        69,
+        95,
+        144
+      ],
+      "luminance": 93.0,
+      "percentage": 12.85,
+      "semantic_name": "Deep Ultramarine Blue"
+    },
+    {
+      "hex": "#8298a4",
+      "rgb": [
+        130.3,
+        151.7,
+        163.9
+      ],
+      "rgb_int": [
+        130,
+        152,
+        164
+      ],
+      "luminance": 146.7,
+      "percentage": 11.23,
+      "semantic_name": "Pale Azure / Sky Mist"
+    },
+    {
+      "hex": "#2f4479",
+      "rgb": [
+        47.4,
+        67.6,
+        121.3
+      ],
+      "rgb_int": [
+        47,
+        68,
+        121
+      ],
+      "luminance": 67.7,
+      "percentage": 11.16,
+      "semantic_name": "Deep Ultramarine Blue"
+    },
+    {
+      "hex": "#191e20",
+      "rgb": [
+        25.1,
+        29.5,
+        31.6
+      ],
+      "rgb_int": [
+        25,
+        30,
+        32
+      ],
+      "luminance": 28.4,
+      "percentage": 8.61,
+      "semantic_name": "Deep Cypress / Night Shadow"
+    },
+    {
+      "hex": "#252b31",
+      "rgb": [
+        36.8,
+        43.0,
+        48.7
+      ],
+      "rgb_int": [
+        37,
+        43,
+        49
+      ],
+      "luminance": 41.8,
+      "percentage": 7.87,
+      "semantic_name": "Dark Slate / Village Charcoal"
+    },
+    {
+      "hex": "#afb89f",
+      "rgb": [
+        174.8,
+        184.1,
+        159.5
+      ],
+      "rgb_int": [
+        175,
+        184,
+        159
+      ],
+      "luminance": 178.5,
+      "percentage": 6.98,
+      "semantic_name": "Star Glow / Citron Cream"
+    },
+    {
+      "hex": "#1f2d59",
+      "rgb": [
+        30.9,
+        45.4,
+        89.0
+      ],
+      "rgb_int": [
+        31,
+        45,
+        89
+      ],
+      "luminance": 46.0,
+      "percentage": 6.64,
+      "semantic_name": "Midnight Navy / Deep Indigo"
+    },
+    {
+      "hex": "#3c4544",
+      "rgb": [
+        60.2,
+        69.0,
+        68.0
+      ],
+      "rgb_int": [
+        60,
+        69,
+        68
+      ],
+      "luminance": 66.3,
+      "percentage": 6.13,
+      "semantic_name": "Dark Slate / Village Charcoal"
+    },
+    {
+      "hex": "#5a6768",
+      "rgb": [
+        89.7,
+        103.3,
+        104.3
+      ],
+      "rgb_int": [
+        90,
+        103,
+        104
+      ],
+      "luminance": 99.3,
+      "percentage": 5.66,
+      "semantic_name": "Twilight Slate / Neutral Azure"
+    },
+    {
+      "hex": "#0e1213",
+      "rgb": [
+        13.8,
+        17.9,
+        18.8
+      ],
+      "rgb_int": [
+        14,
+        18,
+        19
+      ],
+      "luminance": 16.8,
+      "percentage": 5.16,
+      "semantic_name": "Deep Cypress / Night Shadow"
+    },
+    {
+      "hex": "#9f9c54",
+      "rgb": [
+        159.2,
+        155.8,
+        83.8
+      ],
+      "rgb_int": [
+        159,
+        156,
+        84
+      ],
+      "luminance": 148.6,
+      "percentage": 2.87,
+      "semantic_name": "Cypress Olive / Earth Ochre"
+    }
+  ]
+}
