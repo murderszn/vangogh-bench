@@ -86,7 +86,9 @@
     }
   }
 
+  let previousFocus = null;
   function openModal(activeTab = 'privacy') {
+    previousFocus = document.activeElement;
     let modalBackdrop = document.getElementById('van-prefs-modal-backdrop');
     if (!modalBackdrop) {
       modalBackdrop = document.createElement('div');
@@ -100,12 +102,14 @@
 
     renderModalContent(modalBackdrop, activeTab);
     modalBackdrop.style.display = 'flex';
+    document.getElementById('van-prefs-close-btn').focus();
   }
 
   function closeModal() {
     const modalBackdrop = document.getElementById('van-prefs-modal-backdrop');
     if (modalBackdrop) {
       modalBackdrop.style.display = 'none';
+      if (previousFocus && previousFocus.isConnected) previousFocus.focus();
     }
   }
 
@@ -131,6 +135,7 @@
               <h2 id="van-prefs-modal-title">Privacy &amp; Telemetry Preferences</h2>
               <p>
                 Control how VanGoghBench records local interface settings and benchmark telemetry. We never sell visitor data, and we honor Global Privacy Control (GPC) signals automatically.
+                <a href="privacy.html" style="text-decoration:underline;">Read the full privacy policy →</a>
               </p>
             </div>
 
@@ -332,6 +337,18 @@
 
     document.getElementById('van-privacy-dock-trigger').onclick = () => openModal('privacy');
   }
+
+  document.addEventListener('keydown', event => {
+    const dialog = document.getElementById('van-prefs-modal-backdrop');
+    if (!dialog || dialog.style.display === 'none') return;
+    if (event.key === 'Escape') { closeModal(); return; }
+    if (event.key !== 'Tab') return;
+    const controls = [...dialog.querySelectorAll('button, a[href], input, select, textarea, [tabindex="0"]')]
+      .filter(el => !el.disabled && el.getClientRects().length);
+    const first = controls[0], last = controls[controls.length - 1];
+    if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+    else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+  });
 
   function renderBanner() {
     if (stored) return; // already consented

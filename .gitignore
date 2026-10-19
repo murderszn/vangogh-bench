@@ -30,4 +30,6 @@ htmlcov/
 # Temporary outputs & logs
 /tmp/
 *.log
+*.csv
+vangogh-mock-results*.csv
 benchmark/results/renders/
