@@ -776,6 +776,26 @@ class VanGoghBenchmarkHTTPHandler(BaseHTTPRequestHandler):
                     self.wfile.write(f.read())
                 return
 
+        if path in ["/docs", "/docs.html"]:
+            docs_file = os.path.join(BASE_DIR, "docs.html")
+            if os.path.exists(docs_file):
+                self.send_response(200)
+                self.send_header("Content-Type", "text/html; charset=utf-8")
+                self.end_headers()
+                with open(docs_file, "rb") as f:
+                    self.wfile.write(f.read())
+                return
+
+        if path in ["/privacy", "/privacy.html"]:
+            privacy_file = os.path.join(BASE_DIR, "privacy.html")
+            if os.path.exists(privacy_file):
+                self.send_response(200)
+                self.send_header("Content-Type", "text/html; charset=utf-8")
+                self.end_headers()
+                with open(privacy_file, "rb") as f:
+                    self.wfile.write(f.read())
+                return
+
         if path == "/dashboard":
             self.send_response(200)
             self.send_header("Content-Type", "text/html; charset=utf-8")
